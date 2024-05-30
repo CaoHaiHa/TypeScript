@@ -1187,3 +1187,427 @@
 // for (var i = 0; i <= n; i++) {
 //     console.log(i)
 // }
+
+//Ngay 6 - Cap do 1 - Cau 4:
+// var a = '#'
+
+// for (var i = 1; i <= 7; i++) {
+//     console.log(a)
+//     a = a.concat('#')
+// }
+
+//Ngay 6 - Cap do 1 - Cau 5:
+// for (var i = 0; i <= 10; i++) {
+//     console.log(`${i} x ${i} = ${i * i}`)
+// }
+
+//Ngay 6 - Cap do 1 - Cau 6:
+// console.log(`i\t\ti^2\t\ti^3`)
+// for (var i = 0; i <= 10; i++) {
+//     console.log(`${i}\t\t${i * i}\t\t${i * i * i}`)
+// }
+
+//Ngay 6 - Cap do 1 - Cau 7:
+// for (var i = 0; i <= 100; i++) {
+//     if (i % 2 == 0 && i != 0) {
+//         console.log(i)
+//     }
+// }
+
+//Ngay 6 - Cap do 1 - Cau 8:
+// for (var i = 1; i <= 100; i++) {
+//     if (i % 2 != 0) {
+//         console.log(i)
+//     }
+// }
+
+//Ngay 6 - Cap do 1 - Cau 9:
+// for (var i = 0; i <= 100; i++) {
+//     var count = 0;
+//     if (i >= 2) {
+//         for (var j = 1; j <= i; j++) {
+//             if (i % j == 0) {
+//                 count += 1
+//             }
+//         }
+//     }
+//     if (count == 2) {
+//         console.log(i)
+//     }
+// }
+
+//Ngay 6 - Cap do 1 - Cau 10:
+// var sum = 0;
+
+// for (var i = 0; i <= 100; i++) {
+//     sum += i
+// }
+
+// console.log(`The sum of all numbers from 0 to 100 is ${sum}.`)
+
+//Ngay 6 - Cap do 1 - Cau 11:
+// var sumEven = 0
+// var sumOdd = 0
+
+// for (var i = 0; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         sumEven += i
+//     }
+//     else {
+//         sumOdd += i
+//     }
+// }
+
+// console.log(`The sum of all evens from 0 to 100 is ${sumEven}. And the sum of all odds from 0 to 100 is ${sumOdd}.`)
+
+//Ngay 6 - Cap do 1 - Cau 12:
+// var sumEven = 0
+// var sumOdd = 0
+// var arr = []
+
+// for (var i = 0; i <= 100; i++) {
+//     if (i % 2 == 0) {
+//         sumEven += i
+//     }
+//     else {
+//         sumOdd += i
+//     }
+// }
+// arr.push(sumEven)
+// arr.push(sumOdd)
+// console.log(arr)
+
+//Ngay 6 - Cap do 1 - Cau 13:
+// var arr = []
+
+// for (var i = 0; arr.length < 5; i++) {
+//     var randNum = Math.round(Math.random() * 100)
+//     arr.push(randNum)
+// }
+
+// console.log(arr)
+
+//Ngay 6 - Cap do 1 - Cau 14:
+// var arr = []
+
+// for (var i = 0; arr.length < 5; i++) {
+//     var randNum = Math.round(Math.random() * 100)
+//     var count = 0;
+//     for (var j = 0; j <= arr.length; j++) {
+//         if (arr[j] == randNum) {
+//             count += 1
+//         }
+//     }
+//     if (count != 0) {
+//         continue
+//     }
+//     else {
+//         arr.push(randNum)
+//     }
+// }
+
+// console.log(arr)
+
+//Ngay 6 - Cap do 1 - Cau 15:
+// function generateRandomString(a) {
+//     let str = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789'
+//     let result = ' '
+//     let l = str.length
+//     for (var i = 0; i < a; i++) {
+//         result += str.charAt(Math.round(Math.random() * l))
+//     }
+//     return result
+// }
+
+// console.log(generateRandomString(6))
+
+//Ngay 6 - Cap do 2 - Cau 1:
+// var randNum = Math.round(Math.random() * 50)
+
+// function generateRandomString(a) {
+//     let str = 'QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789'
+//     let result = ' '
+//     let l = str.length
+//     for (var i = 0; i < a; i++) {
+//         result += str.charAt(Math.round(Math.random() * l))
+//     }
+//     return result
+// }
+
+// console.log(generateRandomString(randNum))
+
+//Ngay 6 - Cap do 2 - Cau 2:
+// function randomHexadecimal(a) {
+//     let str = '0123456789abcdef'
+//     let result = '#'
+//     let l = str.length
+//     for (var i = 0; i < a; i++) {
+//         result += str.charAt(Math.round(Math.random() * l))
+//     }
+//     return result
+// }
+
+// console.log(randomHexadecimal(6))
+
+//Ngay 6 - Cap do 2 - Cau 3:
+// function randomNumber() {
+//     return Math.round(Math.random() * 255)
+// }
+
+// console.log(`rgb(${randomNumber()},${randomNumber()},${randomNumber()})`)
+
+//Ngay 6 - Cap do 2 - Cau 4:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function arrayUpper(arr) {
+//     let newcountries = []
+//     for (var i = 0; i < arr.length; i++) {
+//         newcountries.push(arr[i].toUpperCase())
+//     }
+//     return newcountries
+// }
+
+// console.log(arrayUpper(countries))
+
+//Ngay 6 - Cap do 2 - Cau 5:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function arrayCountriesLength(arr) {
+//     let newarr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         newarr.push(arr[i].length)
+//     }
+//     return newarr
+// }
+
+// console.log(arrayCountriesLength(countries))
+
+//Ngay 6 - Cap do 2 - Cau 6:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function arrayOfArray(arr) {
+//     let arrOfArr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         var newarr = []
+//         var str = ''
+//         str += arr[i].charAt(0) + arr[i].charAt(1) + arr[i].charAt(2)
+//         str.toUpperCase()
+//         newarr.push(arr[i])
+//         newarr.push(str)
+//         newarr.push(arr[i].length)
+//         arrOfArr.push(newarr)
+//     }
+//     return arrOfArr
+// }
+
+// console.log(arrayOfArray(countries))
+
+//Ngay 6 - Cap do 2 - Cau 7:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function landCountry(arr) {
+//     let newarr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].includes('land')) {
+//             newarr.push(arr[i])
+//         }
+//     }
+//     if (newarr.length != 0) {
+//         return console.log(newarr)
+//     }
+//     else {
+//         return console.log(`All these countries are without land.`)
+//     }
+// }
+
+// landCountry(countries)
+
+//Ngay 6 - Cap do 2 - Cau 8:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function iaCountries(arr) {
+//     let newarr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].endsWith('ia')) {
+//             newarr.push(arr[i])
+//         }
+//     }
+//     if (newarr.length != 0) {
+//         return console.log(newarr)
+//     }
+//     else {
+//         console.log(`These are countries ends without ia.`)
+//     }
+// }
+
+// iaCountries(countries)
+
+//Ngay 6 - Cap do 2 - Cau 9 :
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function bigNumCha(arr) {
+//     let max = arr[0]
+//     for (var i = 0; i < arr.length; i++) {
+//         if (max.length <= arr[i].length) {
+//             max = arr[i]
+//         }
+//     }
+//     return max
+// }
+
+// console.log(bigNumCha(countries))
+
+//Ngay 6 - Cap do 2 - Cau 10:
+// const countries = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
+
+// function only5(arr) {
+//     let newarr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].length == 5) {
+//             newarr.push(arr[i])
+//         }
+//     }
+//     return newarr
+// }
+
+// console.log(only5(countries))
+
+//Ngay 6 - Cap do 2 - Cau 11:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// function longest(arr) {
+//     let long = arr[0]
+//     for (var i = 0; i < arr.length; i++) {
+//         if (long.length <= arr[i].length) {
+//             long = arr[i]
+//         }
+//     }
+//     return long
+// }
+
+// console.log(longest(webTechs))
+
+//Ngay 6 - Cap do 2 - Cau 12:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// function superArr(arr) {
+//     let arrOfArr = []
+//     for (var i = 0; i < arr.length; i++) {
+//         let newarr = []
+//         newarr.push(arr[i])
+//         newarr.push(arr[i].length)
+//         arrOfArr.push(newarr)
+//     }
+//     return arrOfArr
+// }
+
+// console.log(superArr(webTechs))
+
+//Ngay 6 - Cap do 2 - Cau 14:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// console.log(`The for loop:`)
+// for (var i = 0; i < webTechs.length; i++) {
+//     console.log(webTechs[i])
+// }
+
+// console.log(`The for of loop:`)
+
+// for (var value of webTechs) {
+//     console.log(i)
+// }
+
+//Ngay 6 - Cap do 2 - Cau 15:
+// const fruit = ['banana', 'orange', 'mango', 'lemon']
+// let reverseFruit = []
+
+// for (var i = fruit.length - 1; i >= 0; i--) {
+//     reverseFruit.push(fruit[i])
+// }
+
+// console.log(fruit)
+// console.log(reverseFruit)
+
+//Ngay 6 - Cap do 2 - Cau 16:
+// const fullStack = [['HTML', 'CSS', 'JS', 'React'], ['Node', 'Express', 'MongoDB']]
+
+// function superArrayUpper(arr) {
+//     let newarr = []
+//     let newarrupper = []
+//     for (var i = 0; i < arr.length; i++) {
+//         newarr = newarr.concat(arr[i])
+//     }
+//     for (var i = 0; i < newarr.length; i++) {
+//         newarrupper.push(newarr[i])
+//     }
+//     return newarrupper
+// }
+
+// function printArr(arr) {
+//     for (var i = 0; i < arr.length; i++) {
+//         console.log(arr[i])
+//     }
+// }
+
+// printArr(superArrayUpper(fullStack))
+
+//Ngay 6 - Cap do 3:
+// const countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombi', 'Comoros', 'Congo (Brazzaville)', 'Congo', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor (Timor Timur)', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia, The', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea, North', 'Korea, South', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe']
+// const sortedCountries = countries.sort()
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+// const sortedWebTechs = webTechs.sort()
+
+// function landCountries(arr) {
+//     let newlandContries = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].includes('land')) {
+//             newlandContries.push(arr[i])
+//         }
+//     }
+//     return newlandContries
+// }
+
+// function longestCountry(arr) {
+//     let newlongestCountry = arr[0]
+//     for (var i = 0; i < arr.length; i++) {
+//         if (newlongestCountry.length <= arr[i].length) {
+//             newlongestCountry = arr[i]
+//         }
+//     }
+//     return newlongestCountry
+// }
+
+// function only4Countries(arr) {
+//     let newonly4Countries = []
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i].length == 4) {
+//             newonly4Countries.push(arr[i])
+//         }
+//     }
+//     return newonly4Countries
+// }
+
+// function twoWordOrMoreCountries(arr) {
+//     let newtwoWordOrMoreCountries = []
+//     for (var i = 0; i < arr.length; i++) {
+//         let newarr = arr[i].split(' ')
+//         if (newarr.length >= 2) {
+//             newtwoWordOrMoreCountries.push(arr[i])
+//         }
+//     }
+//     return newtwoWordOrMoreCountries
+// }
+
+// function arrayUpper(arr) {
+//     var newArrayUpper = []
+//     for (var i = 0; i < arr.length; i++) {
+//         newArrayUpper.push(arr[i].toUpperCase())
+//     }
+//     return newArrayUpper
+// }
+
+// console.log(landCountries(countries))
+// console.log(`${longestCountry(countries)} (${longestCountry(countries).length})`)
+// console.log(only4Countries(countries))
+// console.log(twoWordOrMoreCountries(countries))
+// console.log(arrayUpper(sortedCountries.reverse()))
