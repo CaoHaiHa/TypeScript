@@ -926,3 +926,315 @@
 // else {
 //     console.log(`Not found.`)
 // }
+
+//Ngay 5 - Cap do 1 - Cau 14:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// itCompanies.forEach(function (x: string) {
+//     var y: string[] = x.toString().split('')
+//     var count: number = 0;
+//     for (var i: number = 0; i < y.length; i++) {
+//         if (y[i] == 'o') {
+//             count += 1
+//         }
+//     }
+//     if (count != 2) {
+//         console.log(x)
+//     }
+// })
+
+//Ngay 5 - Cap do 1 - Cau 15:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// console.log(itCompanies.sort())
+
+//Ngay 5 - Cap do 1 - Cau 16:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// console.log(itCompanies.sort())
+
+//Ngay 5 - Cap do 1 - Cau 17:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// console.log(itCompanies.slice(3))
+
+//Ngay 5 - Cap do 1 - Cau 18:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// console.log(itCompanies.slice(0, itCompanies.length - 3))
+
+//Ngay 5 - Cap do 1 - Cau 19:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+// var l: number = itCompanies.length
+
+// console.log(itCompanies.slice(0, Math.round(l / 2) - 1).concat(itCompanies.slice(Math.round(l / 2))))
+
+//Ngay 5 - Cap do 1 - Cau 20:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// itCompanies.shift()
+// console.log(itCompanies)
+
+//Ngay 5 - Cap do 1 - Cau 21:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+// var l: number = itCompanies.length
+
+// itCompanies.splice(Math.round(l / 2) - 1, 1)
+// console.log(itCompanies)
+
+//Ngay 5 - Cap do 1 - Cau 22:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// itCompanies.pop()
+// console.log(itCompanies)
+
+//Ngay 5 - Cap do 1 - Cau 23:
+// const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`]
+
+// itCompanies.splice(0)
+// console.log(itCompanies)
+
+// //Ngay 5 - Cap do 2 - Cau 2:
+// let text: string = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+// var words: string[] = text.split('.').toString().split(' ').toString().split(',')
+
+// for (var i: number = 0; i < words.length; i++) {
+//     if (words[i] == '') {
+//         words.splice(i, 1)
+//     }
+// }
+
+// console.log(words)
+// console.log(words.length)
+
+//Ngay 5 - Cap do 2 - Cau 3:
+// const shoppingCart: string[] = ['Milk', 'Coffee', 'Tea', 'Honey']
+// var allergic: any = prompt('Are you allergic to honey? Please anwser yes or no.')
+
+// function meatCheck(a: string[]) {
+//     for (var i: number = 0; i < a.length; i++) {
+//         if (a[i] == 'Meat') {
+//             return a
+//         }
+//     }
+//     return a.unshift('Meat')
+// }
+
+// function sugarCheck(a: string[]) {
+//     for (var i: number = 0; i < a.length; i++) {
+//         if (a[i] == 'Sugar') {
+//             return a
+//         }
+//     }
+//     return a.push('Sugar')
+// }
+
+// allergic.toLowerCase()
+// function allergicHoney(a: any, b: string[]) {
+//     if (a == 'yes') {
+//         for (var i: number = 0; i < b.length; i++) {
+//             if (b[i] == 'Honey') {
+//                 b.splice(i, 1)
+//                 return b
+//             }
+//         }
+//     }
+//     else {
+//         return b
+//     }
+// }
+
+// function greenTea(a: string[]) {
+//     for (var i: number = 0; i < a.length; i++) {
+//         if (a[i] == 'Tea') {
+//             a.splice(i, 1, 'Green Tea')
+//             return a
+//         }
+//     }
+// }
+
+// meatCheck(shoppingCart)
+// sugarCheck(shoppingCart)
+// allergicHoney(allergic, shoppingCart)
+// greenTea(shoppingCart)
+
+// console.log(shoppingCart)
+
+//Ngay 5 - Cap do  2 - Cau 4:
+// const countries: string[] = [
+//     'Albania',
+//     'Bolivia',
+//     'Canada',
+//     'Denmark',
+//     'Ethiopia',
+//     'Finland',
+//     'Germany',
+//     'Hungary',
+//     'Ireland',
+//     'Japan',
+//     'Kenya'
+// ]
+
+// function ethiopiaCheck(a: string[]) {
+//     for (var i: number = 0; i < a.length; i++) {
+//         if (a[i] == 'Ethiopia') {
+//             return console.log(a[i].toUpperCase())
+//         }
+//     }
+//     a.push('Ethiopia')
+//     return console.log(a)
+// }
+
+// ethiopiaCheck(countries)
+
+//Ngay 5 - Cap do 2 - Cau 5:
+// const webTechs: string[] = [
+//     'HTML',
+//     'CSS',
+//     'JavaScript',
+//     'React',
+//     'Redux',
+//     'Node',
+//     'MongoDB',
+// ]
+
+// function sassCheck(a: string[]) {
+//     for (var i: number = 0; i < a.length; i++) {
+//         if (a[i] == 'Sass') {
+//             return console.log(`Sass is a CSS preprocess`)
+//         }
+//     }
+//     a.push('Sass')
+//     return console.log(a)
+// }
+
+// sassCheck(webTechs)
+
+//Ngay 5 - Cap do 2 - Cau 6:
+// const frontEnd: string[] = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+// const backEnd: string[] = ['Node', 'Express', 'MongoDB']
+// var fullStack: string[] = frontEnd.concat(backEnd)
+
+// console.log(fullStack)
+
+//Ngay 5 - Cap do 3 - Cau 1:
+// const ages: number[] = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+// var l: number = ages.length
+
+// ages.sort()
+// var min: number = ages[0]
+// var max: number = ages[l - 1]
+
+// console.log(ages)
+// console.log(`The max age: ${max}
+// The min age: ${min}`)
+
+// function findMiddle(a: number[]) {
+//     var ll: number = a.length
+//     if (ll % 2 == 0) {
+//         return console.log(`The median age: ${a.slice(ll / 2 - 1, ll / 2 + 1)}`)
+//     }
+//     else {
+//         return console.log(`The median age: ${a.slice(Math.round(ll / 2) - 1), Math.round(ll / 2)}`)
+//     }
+// }
+
+// findMiddle(ages)
+
+// function averageAge(a: number[]) {
+//     var sum: number = 0
+//     for (var i: number = 0; i < a.length; i++) {
+//         sum += a[i]
+//     }
+//     return sum / a.length
+// }
+
+// console.log(`The average age: ${averageAge(ages)}`)
+
+// console.log(`Range of the ages: ${max - min}`)
+
+// console.log(`min - average: ${Math.abs(min - averageAge(ages)).toFixed(2)}
+// max - average: ${Math.abs(max - averageAge(ages)).toFixed(2)}`)
+
+//Ngay 5 - Cap do 3 - Cau 2:
+// const countries: string[] = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombi', 'Comoros', 'Congo (Brazzaville)', 'Congo', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor (Timor Timur)', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia, The', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea, North', 'Korea, South', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe']
+// var l: number = countries.length
+// var countries1: string[] = []
+// var countries2: string[] = []
+
+// console.log(countries.slice(0, 10))
+
+// function findMiddle(a: string[]) {
+//     return a.slice(Math.round(l / 2 - 1), Math.round(l / 2))
+// }
+
+// console.log(findMiddle(countries))
+
+// function divide(a: string[], b: string[], c: string[]) {
+//     if (a.length % 2 == 0) {
+//         b = a.slice(0, a.length / 2)
+//         c = a.slice(a.length / 2, a.length)
+//         console.log(`Countries array 1:
+//         ${b}`)
+//         console.log(`Countries array 2:
+//         ${c}`)
+//     }
+//     else {
+//         b = a.slice(0, Math.round(a.length / 2) - 1)
+//         c = a.slice(Math.round(a.length / 2) - 1, a.length)
+//         b.push('Vietnamese')
+//         console.log(`Countries array 1:
+//         ${b}`)
+//         console.log(`Countries array 2:
+//         ${c}`)
+//     }
+// }
+
+// divide(countries, countries1, countries2)
+
+//Ngay 6 - Cap do 1 - Cau 1:
+// console.log(`The for loop:`)
+// for (var i = 10; i >= 0; i--) {
+//     console.log(i)
+// }
+
+// console.log(`The while loop:`)
+// let j = 10
+// while (j >= 0) {
+//     console.log(j)
+//     j--
+// }
+
+// console.log(`The do while loop:`)
+// let t = 10
+// do {
+//     console.log(t)
+//     t--
+// } while (t >= 0)
+
+//Ngay 6 - Cap do 1 - Cau 2:
+// console.log(`The for loop:`)
+// for (var i: number = 10; i >= 0; i--) {
+//     console.log(i)
+// }
+
+// console.log(`The while loop:`)
+// let j: number = 10
+// while (j >= 0) {
+//     console.log(j)
+//     j--
+// }
+
+// console.log(`The do while loop:`)
+// let t: number = 10
+// do {
+//     console.log(t)
+//     t--
+// } while (t >= 0)
+
+//Ngay 6 - Cap do 1 - Cau 3:
+// var n: any = prompt(`Enter number n`)
+
+// for (var i: number = 0; i <= n; i++) {
+//     console.log(i)
+// }
