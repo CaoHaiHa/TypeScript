@@ -301,7 +301,7 @@
 
 // console.log(numbers[0] * 12 + numbers[1] + numbers[2] * 12)
 
-//Ngay 3 - Cap do 1 - Cau 5:
+//Ngay 3 - Cap do 1 - Cau 1:
 // var firstName = 'Cao'
 // var lastName = 'Ha'
 // var country = 'Viet Nam'
@@ -324,7 +324,7 @@
 
 // console.log(str == num)
 
-//Ngau 3 - Cap do 1 - Cau 3:
+//Ngay 3 - Cap do 1 - Cau 3:
 // console.log(parseInt('9.8') == 10)
 
 //Ngay 3 - Cap do 1 - Cau 4-i:
@@ -649,7 +649,7 @@
 
 // console.log(`${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()} ${now.getHours()}: ${now.getMinutes()}`)
 
-// //Ngay 3 - Cap do 3 - Cau 1:
+//Ngay 3 - Cap do 3 - Cau 1:
 // let now = new Date()
 // var y = now.getFullYear()
 // var m = String(now.getMonth() + 1).padStart(2, '0')
@@ -659,7 +659,7 @@
 
 // console.log(`${y}-${m}-${d} ${h}: ${min}`)
 
-// //Ngay 4 - Cap do 1 - Cau 1:
+// Ngay 4 - Cap do 1 - Cau 1:
 // var yourAge = prompt('Enter your age')
 
 // console.log(`Enter your age: ${yourAge}`)
@@ -772,7 +772,7 @@
 //     console.log(`Entered value was not a day`)
 // }
 
-// //Ngay 4 - Cap do 3 - Cau 1:
+//Ngay 4 - Cap do 3 - Cau 1:
 // var m = prompt(`Enter a month`)
 
 // console.log(`Enter the month: ${m}`)
@@ -1765,6 +1765,7 @@
 
 // console.log(`${a}\t${b}\t${c}`)
 // console.log(findMax(a, b, c))
+
 //Ngay 7 - Cap do 2 - Cau 1:
 // let a = Math.round(Math.random() * 20) - 10
 // let b = Math.round(Math.random() * 20) - 10
@@ -1804,3 +1805,369 @@
 
 // console.log(`${a}x^2 + ${b}x + ${c} = 0`)
 // solveQuadEquation(a, b, c)
+
+//Ngay 7 - Cap do 2 - Cau 3:
+// const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// function printArray(arr) {
+//     for (var i = 0; i < arr.length; i++) {
+//         console.log(arr[i])
+//     }
+// }
+
+// printArray(arr)
+
+//Ngay 7 - Cap do 2 - Cau 4:
+// function showDateTime() {
+//     let now = new Date()
+//     let d = String(now.getDate()).padStart(2, '0')
+//     let m = String((now.getMonth() + 1)).padStart(2, '0')
+//     let y = now.getFullYear()
+//     let h = String(now.getHours()).padStart(2, '0')
+//     let min = String(now.getMinutes()).padStart(2, '0')
+//     console.log(`${m}/${d}/${y} ${h}:${min}`)
+// }
+
+// showDateTime()
+
+//Ngay 7 - Cap do 2 - Cau 5:
+// var x = Math.round(Math.random() * 10)
+// var y = Math.round(Math.random() * 10)
+// const [newx, newy] = swapValues(x, y)
+
+// function swapValues(a, b) {
+//     return [b, a]
+// }
+
+// console.log(`Before swap:
+// x = ${x}\ty = ${y}`)
+
+// console.log(`After swap:
+// x = ${newx}\ty = ${newy}`)
+
+//Ngay 7 - Cap do 2 - Cau 6:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+// const randomNumArray = [Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100), Math.round(Math.random() * 100)]
+// const sortedRandomNumArray = randomNumArray.sort()
+
+// function reverseArray(arr) {
+//     let reverse = []
+//     for (var i = arr.length - 1; i >= 0; i--) {
+//         reverse.push(arr[i])
+//     }
+//     return reverse
+// }
+
+// console.log(webTechs)
+// console.log(reverseArray(webTechs))
+// console.log(sortedRandomNumArray)
+// console.log(reverseArray(sortedRandomNumArray))
+
+//Ngay 7 - Cap do 2 - Cau 7:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// function capitalizeArray(arr) {
+//     let capitalize = []
+//     for (var i = 0; i < arr.length; i++) {
+//         capitalize.push(arr[i].toUpperCase())
+//     }
+//     return capitalize
+// }
+
+// console.log(capitalizeArray(webTechs))
+
+//Ngay 7 - Cap do 2 - Cau 8:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// function addItem(a, arr) {
+//     let item = arr
+//     item.push(a)
+//     return item
+// }
+
+// console.log(addItem('C++', webTechs))
+
+//Ngay 7 - Cap do 2 - Cau 9:
+// const webTechs = ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node', 'MongoDB']
+
+// function removeItem(a, arr) {
+//     let remove = arr.slice(0, a).concat(arr.slice(a + 1, arr.length))
+//     return remove
+// }
+
+// console.log(removeItem(3, webTechs))
+
+//Ngay 7 - Cap do 2 - Cau 10:
+// const randNum = Math.round(Math.random() * 100)
+
+// function sumOfNumbers(num) {
+//     let sum = 0
+//     for (var i = 0; i <= num; i++) {
+//         sum += i
+//     }
+//     return sum
+// }
+
+// console.log(randNum)
+// console.log(sumOfNumbers(randNum))
+
+//Ngay 7 - Cap do 2 - Cau 11:
+// const randNum = Math.round(Math.random() * 100)
+
+// function sumOfOdds(num) {
+//     let sum = 0
+//     for (var i = 0; i <= num; i++) {
+//         if (i % 2 != 0) {
+//             sum += i
+//         }
+//     }
+//     return sum
+// }
+
+// console.log(randNum)
+// console.log(sumOfOdds(randNum))
+
+//Ngay 7 - Cap do 2 - Cau 12:
+// const randNum = Math.round(Math.random() * 100)
+
+// function sumOfEvens(num) {
+//     let sum = 0
+//     for (var i = 0; i <= num; i++) {
+//         if (i % 2 == 0) {
+//             sum += i
+//         }
+//     }
+//     return sum
+// }
+
+// console.log(randNum)
+// console.log(sumOfEvens(randNum))
+
+//Ngay 7 - Cap do 2 - Cau 13:
+// const randNum = Math.round(Math.random() * 100)
+
+// function evensAndOdds(num) {
+//     let countEvens = 0
+//     let countOdds = 0
+//     for (var i = 0; i <= num; i++) {
+//         if (i % 2 == 0) {
+//             countEvens += 1
+//         }
+//         else {
+//             countOdds += 1
+//         }
+//     }
+//     console.log(`The number of odds are ${countOdds}.`)
+//     console.log(`The number of evens are ${countEvens}.`)
+// }
+
+// console.log(randNum)
+// evensAndOdds(randNum)
+
+//Ngay 7 - Cap do 2 - Cau 14:
+// function sumOfArguments() {
+//     let sum = 0
+//     for (var i = 0; i < arguments.length; i++) {
+//         sum += arguments[i]
+//     }
+//     return sum
+// }
+
+// function randNum() {
+//     return Math.round(Math.random() * 100)
+// }
+
+// console.log(sumOfArguments(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+// console.log(sumOfArguments(randNum(), randNum(), randNum(), randNum(), randNum()))
+// console.log(sumOfArguments(randNum(), randNum(), randNum(), randNum(), randNum(), randNum()))
+
+//Ngay 7 - Cap do 2 - Cau 15:
+// function randomUserIp() {
+//     return Math.round(Math.random() * 255)
+// }
+
+// console.log(`${randomUserIp()}.${randomUserIp()}.${randomUserIp()}.${randomUserIp()}`)
+
+//Ngay 7 - Cap do 2 - Cau 16:
+// function randomMacAddress() {
+//     let address = '0123456789ABCDEF'
+//     let random = ''
+//     let dot = ':'
+//     for (var j = 0; j < 6; j++) {
+//         for (var i = 0; i < 2; i++) {
+//             random += address.charAt(Math.round(Math.random() * address.length - 1))
+//         }
+//         if (j == 5) {
+//             break
+//         }
+//         random += dot
+//     }
+//     return random
+// }
+
+// console.log(randomMacAddress())
+
+//Ngay 7 - Cap do 2 - Cau 17:
+// function randomHexaNumberGenerator() {
+//     let hexa = '0123456789abcdef'
+//     let random = '#'
+//     for (var i = 0; i < 6; i++) {
+//         random += hexa.charAt(Math.round(Math.random() * hexa.length - 1))
+//     }
+//     return random
+// }
+
+// console.log(randomHexaNumberGenerator())
+
+//Ngay 7 - Cap do 2 - Cau 18:
+// function userIdGenerator() {
+//     let id = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
+//     let random = ''
+//     for (var i = 0; i < 7; i++) {
+//         random += id.charAt(Math.round(Math.random() * id.length - 1))
+//     }
+//     return random
+// }
+
+// console.log(userIdGenerator())
+
+//Ngay 7 - Cap do 3 - Cau 1:
+// var input1 = prompt(`Enter the numbers of characters`)
+// var input2 = prompt(`Enter the numbers of ids`)
+
+// function userIdGeneratedByUser() {
+//     let id = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM'
+//     let list = []
+//     for (var i = 0; i < input2; i++) {
+//         let random = ''
+//         for (var j = 0; j < input1; j++) {
+//             random += id.charAt(Math.round(Math.random() * id.length - 1))
+//         }
+//         list.push(random)
+//     }
+//     return list
+// }
+
+// console.log(userIdGeneratedByUser())
+
+//Ngay 7 - Cap do 3 - Cau 2:
+// let [rgb1, rgb2, rgb3] = rgbColorGenerator()
+
+// function rgbColorGenerator() {
+//     return [Math.round(Math.random() * 255), Math.round(Math.random() * 255), Math.round(Math.random() * 255)]
+// }
+
+// console.log(`rgb(${rgb1},${rgb2},${rgb3})`)
+
+//Ngay 7 - Cap do 3 - Cau 3:
+// const hexaColor = arrayOfHexaColors10000()
+// const randNum = Math.round(Math.random() * 10000)
+
+// function arrayOfHexaColors10000() {
+//     let hexa = '0123456789ABCDEF'
+//     let list = []
+//     for (var i = 0; i < 10000; i++) {
+//         let random = '#'
+//         let count = 0
+//         for (var j = 0; j < 6; j++) {
+//             random += hexa.charAt(Math.round(Math.random() * hexa.length - 1))
+//         }
+//         for (var t = 0; t < list.length; t++) {
+//             if (list[t] == random) {
+//                 count++
+//             }
+//         }
+//         if (count == 0) {
+//             list.push(random)
+//         }
+//     }
+//     return list
+// }
+
+// function arrayOfHexaColors() {
+//     let list = []
+//     for (var i = 0; i < randNum; i++) {
+//         list.push(hexaColor[Math.round(Math.random() * 10000)])
+//     }
+//     return list
+// }
+
+// console.log(hexaColor.length)
+// console.log(arrayOfHexaColors())
+
+//Ngay 7 - Cap do 3 - Cau 4:
+// const rgbColors = arrayOfRgbColors1000()
+
+// function randomRgbColor() {
+//     let random = '('
+//     for (var i = 0; i < 3; i++) {
+//         let randNum = Math.round(Math.random() * 255)
+//         random += randNum
+//         if (i == 2) {
+//             break
+//         }
+//         random += ','
+//     }
+//     random += ')'
+//     return random
+// }
+
+// function arrayOfRgbColors1000() {
+//     let list = []
+//     for (var i = 0; i < 1000; i++) {
+//         let count = 0;
+//         for (var j = 0; j < list.length; j++) {
+//             if (list[j] == randomRgbColor()) {
+//                 count++
+//             }
+//         }
+//         if (count == 0) {
+//             list.push(randomRgbColor())
+//         }
+//     }
+//     return list
+// }
+
+// function arrayOfRgbColors() {
+//     let list = []
+//     let randNum = Math.round(Math.random() * 1000)
+//     for (var i = 0; i < randNum; i++) {
+//         list.push(rgbColors[Math.round(Math.random() * 990)])
+//     }
+//     return list
+// }
+
+// console.log(arrayOfRgbColors())
+
+//Ngay 7 - Cap do 3 - Cau 5:
+// function hexaColorRandom() {
+//     let hexa = '0123456789ABCDEF'
+//     let random = '#'
+//     for (var i = 0; i < 6; i++) {
+//         random += hexa.charAt(Math.round(Math.random() * hexa.length - 1))
+//     }
+//     return random
+// }
+
+// function convertHexaToRgb(a) {
+//     let hexa = '0123456789ABCDEF'
+//     let rgb = '('
+//     a = a.slice(1, a.length)
+//     let x = 0
+//     let y = 1
+//     for (var i = 0; i < 3; i++) {
+//         let temp = 0
+//         temp = hexa.indexOf(a.charAt(x)) + hexa.indexOf(a.charAt(y)) * 16
+//         rgb += temp
+//         x += 2
+//         y += 2
+//         if (i == 2) {
+//             break
+//         }
+//         rgb += ','
+//     }
+//     rgb += ')'
+//     return rgb
+// }
+// console.log(hexaColorRandom())
+// console.log(convertHexaToRgb(hexaColorRandom()))
