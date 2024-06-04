@@ -1,4 +1,4 @@
-//Ngay 7 - Cap do 3 - Cau 1:
+//Cau 1:
 // var input1: any = prompt(`Enter the numbers of characters`)
 // var input2: any = prompt(`Enter the numbers of ids`)
 
@@ -17,7 +17,7 @@
 
 // console.log(userIdGeneratedByUser())
 
-//Ngay 7 - Cap do 3 - Cau 2:
+//Cau 2:
 // let [rgb1, rgb2, rgb3]: number[] = rgbColorGenerator()
 
 // function rgbColorGenerator(): number[] {
@@ -26,7 +26,7 @@
 
 // console.log(`rgb(${rgb1},${rgb2},${rgb3})`)
 
-//Ngay 7 - Cap do 3 - Cau 3:
+//Cau 3:
 // const hexaColor: string[] = arrayOfHexaColors10000()
 // const randNum: number = Math.round(Math.random() * 10000)
 
@@ -62,7 +62,51 @@
 // console.log(hexaColor.length)
 // console.log(arrayOfHexaColors())
 
-//Ngay 7 - Cap do 3 - Cau 5:
+//Cau 4:
+// const rgbColors: string[] = arrayOfRgbColors1000()
+
+// function randomRgbColor(): string {
+//     let random: string = '('
+//     for (var i: number = 0; i < 3; i++) {
+//         let randNum: number = Math.round(Math.random() * 255)
+//         random += randNum
+//         if (i == 2) {
+//             break
+//         }
+//         random += ','
+//     }
+//     random += ')'
+//     return random
+// }
+
+// function arrayOfRgbColors1000(): string[] {
+//     let list: string[] = []
+//     for (var i: number = 0; i < 1000; i++) {
+//         let count: number = 0;
+//         for (var j: number = 0; j < list.length; j++) {
+//             if (list[j] == randomRgbColor()) {
+//                 count++
+//             }
+//         }
+//         if (count == 0) {
+//             list.push(randomRgbColor())
+//         }
+//     }
+//     return list
+// }
+
+// function arrayOfRgbColors(): string[] {
+//     let list: string[] = []
+//     let randNum: number = Math.round(Math.random() * 1000)
+//     for (var i: number = 0; i < randNum; i++) {
+//         list.push(rgbColors[Math.round(Math.random() * 990)])
+//     }
+//     return list
+// }
+
+// console.log(arrayOfRgbColors())
+
+//Cau 5:
 // function hexaColorRandom(): string {
 //     let hexa: string = '0123456789ABCDEF'
 //     let random: string = '#'
@@ -95,7 +139,7 @@
 // console.log(hexaColorRandom())
 // console.log(convertHexaToRgb(hexaColorRandom()))
 
-//Ngay 7 - Cap do 3 - Cau 6:
+//Cau 6:
 // const reverseString = (str: string): string => str.split('').reverse().join('')
 // const rgbTest: string = rgbColorRandom()
 
@@ -144,7 +188,7 @@
 // console.log(rgbTest)
 // console.log(convertRgbToHexa(rgbTest))
 
-//Ngay 7 - Cap do 3 - Cau 7:
+//Cau 7:
 // function hexaColorRandom(): string {
 //     let hexa: string = '0123456789ABCDEF'
 //     let random: string = '#'
@@ -205,7 +249,7 @@
 // console.log(generateColers('rgb', 1))
 // console.log(generateColers('rgb', 3))
 
-//Ngay 7 - Cap do 3 - Cau 8:
+//Cau 8:
 // const itCompanies: string[] = [`Facebook`, `Google`, `Microsoft`, `Apple`, `IBM`, `Oracle`, `Amazon`, 'Samsung']
 
 // function shuffleArray(arr: any[]) {
@@ -230,7 +274,7 @@
 
 // console.log(shuffleArray(itCompanies))
 
-//Ngay 7 - Cap do 3 - Cau 9:
+//Cau 9:
 // const randNum: number = Math.floor(Math.random() * 15)
 
 // const factorial = (num: number): number => {
@@ -244,7 +288,7 @@
 // console.log(randNum)
 // console.log(factorial(randNum))
 
-//Ngay 7 - Cap do 3 - Cau 10:
+//Cau 10:
 // const isEmpty = (any: any): any => {
 //     if (any === '') {
 //         return console.log(`Empty.`)
@@ -256,7 +300,7 @@
 
 // isEmpty('')
 
-//Ngay 7 - Cap do 3 - Cau 11:
+//Cau 11:
 // const sumOfArguments = (..._arguments: number[]): number => {
 //     let sum: number = 0
 //     for (let i: number = 0; i < _arguments.length; i++) {
@@ -273,7 +317,7 @@
 // console.log(sumOfArguments(randNum(), randNum(), randNum(), randNum(), randNum()))
 // console.log(sumOfArguments(randNum(), randNum(), randNum(), randNum(), randNum(), randNum()))
 
-//Ngay 7 - Cap do 3 - Cau 12:
+//Cau 12:
 // const sumOfArrayItems = (arr: any): any => {
 //     let result: number = 0
 //     for (let i: number = 0; i < arr.length; i++) {
@@ -289,7 +333,7 @@
 // console.log(sumOfArrayItems([1, 2, 3, 4, '5', 6, 7, 8, 9, 10]))
 // console.log(sumOfArrayItems([1, 2, 3, 4, 'name', 6, 7, 8, 9, 10]))
 
-//Ngay 7 - Cap do 3 - Cau 13:
+//Cau 13:
 // const average = (arr: any): any => {
 //     let sum: any = 0
 //     for (let i: number = 0; i < arr.length; i++) {
@@ -306,7 +350,7 @@
 // console.log(average([1, 2, 3, 4, '5', 6, 7, 8, 9, 10]))
 // console.log(average([1, 2, 3, 4, `name`, 6, 7, 8, 9, 10]))
 
-//Ngay 7 - Cap do 3 - Cau 14:
+//Cau 14:
 // const modifyArray = (arr: string[]): any => {
 //     if (arr.length < 5) { return `item not found` }
 //     arr[4] = arr[4].toUpperCase()
@@ -317,7 +361,7 @@
 // console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon', 'Microsoft', 'IBM']))
 // console.log(modifyArray(['Google', 'Facebook', 'Apple', 'Amazon']))
 
-//Ngay 7 - Cap do 3 - Cau 15:
+//Cau 15:
 // const randNum: number = Math.floor(Math.random() * 100)
 
 // const isPrime = (num: number): boolean => {
@@ -332,7 +376,7 @@
 // console.log(randNum)
 // console.log(isPrime(randNum))
 
-//Ngay 7 - Cap do 3 - Cau 16:
+//Cau 16:
 // const isUnique = (arr: any[]): boolean => {
 //     for (let i: number = 0; i < arr.length; i++) {
 //         let count: number = 0;
@@ -350,7 +394,7 @@
 // console.log(isUnique(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']))
 // console.log(isUnique(['Google', 'Facebook', 'Apple', 'Amazon', 'Apple', 'IBM']))
 
-//Ngay 7 - Cap do 3 - Cau 17:
+//Cau 17:
 // const isSameDataType = (arr: any): boolean => {
 //     for (let i: number = 0; i < arr.length; i++) {
 //         let count: number = 0;
@@ -366,7 +410,7 @@
 // console.log(isSameDataType(['Avocado', 'Tomato', 'Potato', 'Mango', 'Lemon', 'Carrot']))
 // console.log(isSameDataType(['Google', 'Facebook', 'Apple', 'Amazon', undefined, 'IBM']))
 
-//Ngay 7 - Cap do 3 - Cau 18:
+//Cau 18:
 // const isValidVariable = (str: string): boolean => {
 //     let javascript: string = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM$_'
 //     for (let i: number = 0; i < str.length; i++) {
@@ -386,7 +430,7 @@
 // console.log(isValidVariable(`Inst^gr^m`))
 // console.log(isValidVariable(`#-^-Super-^-#`))
 
-//Ngay 7 - Cap do 3 - Cau 19:
+//Cau 19:
 // const sevenRandomNumbers = (): number[] => {
 //     let seven: number[] = []
 //     for (let i: number = 0; i < 7; i++) {
@@ -406,7 +450,7 @@
 
 // console.log(sevenRandomNumbers())
 
-//Ngay 7 - Cap do 3 - Cau 20:
+//Cau 20:
 // const countries: string[] = ['Albania', 'Bolivia', 'Canada', 'Denmark', 'Ethiopia', 'Finland', 'Germany', 'Hungary', 'Ireland', 'Japan', 'Kenya']
 
 // const reverseCountries = (arr: any[]): any[] => {
