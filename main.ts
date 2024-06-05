@@ -1,231 +1,285 @@
-//Level 2
-interface User {
-    email: string;
-    skills: string[];
-    age: number;
-    isLoggedIn: boolean;
-    points: number;
-}
-
-interface Users {
-    [key: string]: User
-}
-
-const users: Users = {
-    Alex: {
-        email: 'alex@alex.com',
-        skills: ['HTML', 'CSS', 'JavaScript'],
-        age: 20,
-        isLoggedIn: false,
-        points: 30
-    },
-    Asab: {
-        email: 'asab@asab.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
-        age: 25,
-        isLoggedIn: false,
-        points: 50
-    },
-    Brook: {
-        email: 'daniel@daniel.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
-        age: 30,
-        isLoggedIn: true,
-        points: 50
-    },
-    Daniel: {
-        email: 'daniel@alex.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
-        age: 20,
-        isLoggedIn: false,
-        points: 40
-    },
-    John: {
-        email: 'john@john.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
-        age: 20,
-        isLoggedIn: true,
-        points: 50
-    },
-    Thomas: {
-        email: 'thomas@thomas.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'React'],
-        age: 20,
-        isLoggedIn: false,
-        points: 40
-    },
-    Paul: {
-        email: 'paul@paul.com',
-        skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
-        age: 20,
-        isLoggedIn: false,
-        points: 40
-    }
-};
-
 //Cau 1:
-const findPersonMostSkills = (obj: Users): { name: string, info: User } => {
-    let skillMost = 0;
-    let userMostSkills: string | null = null;
-    for (let user in obj) {
-        if (obj[user].hasOwnProperty('skills')) {
-            if (skillMost < obj[user].skills.length) {
-                skillMost = obj[user].skills.length;
-                userMostSkills = user;
-            }
-        }
-    }
-    return { name: userMostSkills!, info: obj[userMostSkills!] };
-};
-
-console.log(findPersonMostSkills(users));
-console.log(`-------------------------------------------------------------`)
-
-//Cau 2:
-const countUserMore50Points = (obj: Users): { countUser: number, listUser: [string, object][] } => {
-    let count: number = 0;
-    let listUserMore50Points: [string, object][] = []
-    for (let user in obj) {
-        let userMore50Points: [string, object] = [user, obj[user]]
-        if (obj[user].hasOwnProperty('points')) {
-            if (obj[user].points >= 50) {
-                count++
-                userMore50Points.push(user)
-                userMore50Points.push(obj[user])
-                listUserMore50Points.push(userMore50Points)
-            }
-        }
-    }
-    return { countUser: count, listUser: listUserMore50Points }
+interface Account {
+    firstName: string,
+    lastName: string,
+    incomes: {
+        salary: number,
+        bonus: number,
+        overtime: number,
+        other: number
+    },
+    expenses: {
+        living: number,
+        travel: number,
+        rent: number,
+        other: number
+    },
+    totalIncome: () => number,
+    totalExpense: () => number,
+    accountInfo: () => string,
+    addIncome: (incomeNumber: number) => object
+    addExpense: (expenseNumber: number) => object
+    accountBalance: () => number
 }
 
-const countLoggedUsers = (obj: Users): { countUser: number; listUser: [string, { isLoggedIn: boolean }][] } => {
-    let count = 0;
-    let listLoggedUsers: [string, { isLoggedIn: boolean }][] = [];
-    for (let user in obj) {
-        let loggedUser: [string, { isLoggedIn: boolean }] = [user, obj[user]];
-        if (obj[user].hasOwnProperty('isLoggedIn')) {
-            if (obj[user].isLoggedIn) {
-                count++;
-                listLoggedUsers.push(loggedUser);
-            }
+const personalAccount: Account = {
+    firstName: 'Ha',
+    lastName: 'Cao',
+    incomes: {
+        salary: 860,
+        bonus: 614,
+        overtime: 932,
+        other: 18
+    },
+    expenses: {
+        living: 223,
+        travel: 340,
+        rent: 695,
+        other: 454
+    },
+    totalIncome: function () {
+        return this.incomes.bonus + this.incomes.other + this.incomes.overtime + this.incomes.salary
+    },
+    totalExpense: function () {
+        return this.expenses.living + this.expenses.other + this.expenses.rent + this.expenses.travel
+    },
+    accountInfo: function () {
+        return `I am ${this.firstName} ${this.lastName}.\nIncomes: ${Object.values(this.incomes)}.\nExpenses: ${Object.values(this.expenses)}.\nTotal incomes: ${this.totalIncome()}.\nTotal expenses: ${this.totalExpense()}.\nAccount balance: ${this.accountBalance()}.`
+    },
+    addIncome: function (incomeNumber: number) {
+        this.incomes.other += incomeNumber
+        return this.incomes
+    },
+    addExpense: function (expenseNumber: number) {
+        this.expenses.other += expenseNumber
+        return this.expenses
+    },
+    accountBalance: function () {
+        return this.totalIncome() - this.totalExpense()
+    }
+}
+
+console.log(personalAccount)
+console.log(personalAccount.accountInfo())
+console.log(personalAccount.addIncome(200))
+console.log(personalAccount.addExpense(200))
+console.log(`----------------------------------------------------------------`)
+
+//Array:
+interface user {
+    _id: string,
+    username: string,
+    email: string,
+    password: string,
+    createdAt: string,
+    isLoggedIn: boolean
+}
+
+const users: user[] = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt: '08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt: '08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt: '08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt: '08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt: '08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+];
+
+interface rating {
+    userId: string,
+    rate: number
+}
+
+interface product {
+    _id: string,
+    name: string,
+    description: string,
+    price: number,
+    ratings: rating[],
+    likes: string[]
+}
+
+const products: product[] = [
+    {
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
+]
+//Cau 2: //_id, username, email, password, createdAt, isLoggedIn
+//Cau a:
+const signUp = (objUsers: user[], objUser: user): user[] | any => {
+    for (let i in objUsers) {
+        if (objUsers[i]._id == objUser._id || objUsers[i].email == objUser.email) {
+            return console.log(`You have already an account.`)
         }
     }
-    return { countUser: count, listUser: listLoggedUsers };
-};
+    objUsers.push(objUser)
+    return objUsers
+}
+// { _id: 'fasfds', username: 'linhtalinhtinh', email: 'linhtalinhtinh@mail.com', password: 'fdasfdsa', createdAt: `06/05/2024 3:30 PM`, isLoggedIn: true }
 
-console.log(countLoggedUsers(users))
-console.log(countUserMore50Points(users))
-console.log(`------------------------------------------------------------`)
+console.log(signUp(users, { _id: 'fasfds', username: 'linhtalinhtinh', email: 'linhtalinhtinh@mail.com', password: 'fdasfdsa', createdAt: `06/05/2024 3:30 PM`, isLoggedIn: true }))
+
+//Cau b:
+const signIn = (mail: string, pass: string, obj: user[]): string => {
+    for (let i in obj) {
+        if (obj[i].email == mail && obj[i].password == pass && obj[i].isLoggedIn == true) {
+            return `Account was logged.`
+        }
+        else if (obj[i].email == mail && obj[i].password == pass && obj[i].isLoggedIn == false) {
+            return `Account is logging.`
+        }
+    }
+    return `Your email or password is wrong.Please try again.`
+}
+
+console.log(signIn('linhtalinhtinh@mail.com', 'fdasfdsa', users))
+console.log(signIn('alex@alex.com', '123123', users))
+console.log(signIn('linhtalinhinh@mail.com', 'fdasfdsa', users))
+console.log(`---------------------------------------------------------------`)
 
 //Cau 3:
-const findMernDev = (obj: Users): [string, object][] => {
-    let listMernDev: [string, object][] = []
-    for (let user in obj) {
-        let mernDev: [string, object] = [user, obj[user]]
-        if (obj[user].hasOwnProperty('skills')) {
-            let count: number = 0
-            for (let j: number = 0; j < obj[user].skills.length; j++) {
-                if (obj[user].skills[j] == 'MongoDB' || obj[user].skills[j] == 'Express' || obj[user].skills[j] == 'React' || obj[user].skills[j] == 'Node') {
-                    count++
-                }
-            }
-            if (count == 4) {
-                mernDev.push(user)
-                mernDev.push(obj[user])
-                listMernDev.push(mernDev)
-            }
+//Cau a:
+const rateProduct = (obj: product[], rateObject: rating, productName: string): string | rating[] => {
+    for (let i in obj) {
+        if (obj[i].name == productName) {
+            obj[i].ratings.push(rateObject)
+            return Object.values(obj[i].ratings)
         }
     }
-    return listMernDev
+    return `Your product you rating is not exist.`
+}
+const randNum = (): string => {
+    return (Math.random() * 5).toFixed(1)
+}
+const randId = (): string => {
+    let rand: string = 'qwertyuiopasdfghjklzxcvbnm'
+    let id: string = ''
+    for (let i = 0; i < 6; i++) {
+        id += rand.charAt(Math.floor(Math.random() * rand.length - 1))
+    }
+    return id
 }
 
-console.log(findMernDev(users))
-console.log(`------------------------------------------------------------`)
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'TV')
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'TV')
+rateProduct(products, { userId: randId(), rate: +randNum() }, 'mobile phone')
+//Cau b:
+const averageRating = (obj: product[]): { '01': string, rate: string }[] => {
+    let rankRate: { '01': string, rate: string }[] = []
+    for (let i in obj) {
+        let rate: any = 0
+        if (obj[i].name == 'TV') {
+            for (let j = 0; j < obj[i].ratings.length; j++) {
+                rate += +obj[i].ratings[j].rate
+            }
+            rate /= +obj[i].ratings.length
+            rate = rate.toFixed(1)
+            rankRate.push({ '01': 'TV', rate })
+        }
+        else if (obj[i].name == 'Laptop') {
+            for (let j = 0; j < obj[i].ratings.length; j++) {
+                rate += +obj[i].ratings[j].rate
+            }
+            rate /= +obj[i].ratings.length
+            rate = rate.toFixed(1)
+            rankRate.push({ '01': 'Laptop', rate })
+        }
+        else if (obj[i].name == 'mobile phone') {
+            for (let j = 0; j < obj[i].ratings.length; j++) {
+                rate += +obj[i].ratings[j].rate
+            }
+            rate /= +obj[i].ratings.length
+            rate = rate.toFixed(1)
+            rankRate.push({ '01': 'mobile phone', rate })
+        }
+    }
+    return rankRate
+}
+
+console.log(averageRating(products))
+console.log(`---------------------------------------------------------------`)
 
 //Cau 4:
-const copyUsers: Users = Object.assign({}, users)
-
-copyUsers.Ha = {
-    email: 'ha@ha.com',
-    skills: ['HTML', 'CSS', 'JavaScript', 'TypeScript'],
-    age: 22,
-    isLoggedIn: false,
-    points: 10
-}
-
-console.log(copyUsers)
-console.log(`------------------------------------------------------------`)
-
-//Cau 5:
-console.log(Object.keys(users))
-console.log(`------------------------------------------------------------`)
-
-//Cau 6:
-console.log(Object.values(users))
-console.log(`------------------------------------------------------------`)
-
-//Cau 7:
-interface Country {
-    name: string;
-    capital: string;
-    populations: number;
-    languages: string[];
-}
-
-interface Countries {
-    [key: string]: Country;
-}
-
-const countries: Countries = {
-    "Vietnam": {
-        "name": "Vietnam",
-        "capital": "Hanoi",
-        "populations": 96483981,
-        "languages": ["Vietnamese"]
-    },
-    "United States": {
-        "name": "United States",
-        "capital": "Washington, D.C.",
-        "populations": 331449281,
-        "languages": ["English"]
-    },
-    "France": {
-        "name": "France",
-        "capital": "Paris",
-        "populations": 67081000,
-        "languages": ["French"]
-    },
-    "Japan": {
-        "name": "Japan",
-        "capital": "Tokyo",
-        "populations": 126476461,
-        "languages": ["Japanese"]
-    },
-    "Germany": {
-        "name": "Germany",
-        "capital": "Berlin",
-        "populations": 83166711,
-        "languages": ["German"]
-    },
-    "Australia": {
-        "name": "Australia",
-        "capital": "Canberra",
-        "populations": 25649909,
-        "languages": ["English"]
-    },
-    "Brazil": {
-        "name": "Brazil",
-        "capital": "Brasília",
-        "populations": 211000000,
-        "languages": ["Portuguese"]
+const likeProduct = (obj: product[], id: string, nameProduct: string): product[] => {
+    for (let i in obj) {
+        if (obj[i].name == nameProduct) {
+            for (let j: number = 0; j < obj[i].likes.length; j++) {
+                if (obj[i].likes[j] == id) {
+                    obj[i].likes.splice(j, 1)
+                    return obj
+                }
+            }
+            obj[i].likes.push(id)
+            return obj
+        }
     }
+    return obj
 }
 
-const printCountries = (obj: Countries) => {
-    for (let country in obj) {
-        console.log(`${country}\nCapital: ${obj[country].capital}\nPopulations: ${obj[country].populations}\nLangues: ${obj[country].languages}`)
-    }
-}
-
-printCountries(countries)
+likeProduct(products, randId(), 'Laptop')
+likeProduct(products, randId(), 'Laptop')
+likeProduct(products, randId(), 'mobile phone')
+likeProduct(products, randId(), 'mobile phone')
+likeProduct(products, randId(), 'mobile phone')
+likeProduct(products, randId(), 'TV')
+console.log(likeProduct(products, randId(), 'TV'))
