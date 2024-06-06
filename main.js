@@ -1,7 +1,5 @@
-//Array:
-const countries = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
-const names = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+//Array
+const countries = ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana', 'Brazil', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Canada', 'Cape Verde', 'Central African Republic', 'Chad', 'Chile', 'China', 'Colombi', 'Comoros', 'Congo (Brazzaville)', 'Congo', 'Costa Rica', "Cote d'Ivoire", 'Croatia', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'East Timor (Timor Timur)', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland', 'France', 'Gabon', 'Gambia, The', 'Georgia', 'Germany', 'Ghana', 'Greece', 'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan', 'Kenya', 'Kiribati', 'Korea, North', 'Korea, South', 'Kuwait', 'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands', 'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco', 'Mongolia', 'Morocco', 'Mozambique', 'Myanmar', 'Namibia', 'Nauru', 'Nepal', 'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palau', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia', 'Saint Vincent', 'Samoa', 'San Marino', 'Sao Tome and Principe', 'Saudi Arabia', 'Senegal', 'Serbia and Montenegro', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa', 'Spain', 'Sri Lanka', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Vanuatu', 'Vatican City', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe']
 const products = [
     { product: 'banana', price: 3 },
     { product: 'mango', price: 6 },
@@ -10,195 +8,83 @@ const products = [
     { product: 'coffee', price: 10 },
     { product: 'tea', price: '' },
 ]
-const arr1 = ['Finland', 100, 'Mathias', 'IceLand', 11]
+
+//Cau 1:
+const sum1 = products.filter((e) => typeof e.price === 'number').reduce((total, e) => {
+    return total + e.price
+}, 0)
+
+console.log(sum1)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 2:
+const sum2 = products.reduce((total, e) => {
+    if (typeof e.price === 'number') return total + e.price
+    else return total
+}, 0)
+
+console.log(sum2)
+console.log(`-------------------------------------------------------------`)
 
 //Cau 3:
-const copyCountries = countries
+const categorizeCountries = (countries, pattern) => {
+    let newCoutries = countries.filter((e) => {
+        e = e.toLowerCase()
+        return e.includes(pattern)
+    })
+    return newCoutries
+}
 
-copyCountries.forEach(e => console.log(e))
+console.log(categorizeCountries(countries, 'land'))
+console.log(categorizeCountries(countries, 'ia'))
+console.log(categorizeCountries(countries, 'island'))
+console.log(categorizeCountries(countries, 'stan'))
 console.log(`-------------------------------------------------------------`)
 
 //Cau 4:
-const copyNames = names
+const boring = (countries) => {
+    let alpha = 'qwertyuiopasdfghjklzxcvbnm'.split('').sort()
+    let bor = alpha.map((e1) => {
+        let count = 0
+        countries.forEach((e2) => {
+            e2 = e2.toLowerCase()
+            if (e2.startsWith(e1)) count++
+            return count
+        });
+        return { Character: e1, Count: count }
+    })
+    return bor
+}
 
-copyNames.forEach(e => console.log(e))
+console.log(boring(countries))
 console.log(`-------------------------------------------------------------`)
 
 //Cau 5:
-const copyNumbers = numbers
+const getFirstTenCountries = (countries) => {
+    let newCountries = countries.filter((e, index) => {
+        if (index < 10) return e
+    })
+    return newCountries
+}
 
-copyNumbers.forEach(e => console.log(e))
+console.log(getFirstTenCountries(countries))
 console.log(`-------------------------------------------------------------`)
 
 //Cau 6:
-const newCountries = countries.map(e => e.toUpperCase())
+const getLastTenCountries = (countries) => {
+    let newCountries = countries.filter((e, index, arr) => {
+        if (index > arr.length - 11) return e
+    })
+    return newCountries
+}
 
-console.log(newCountries)
+console.log(getLastTenCountries(countries))
 console.log(`-------------------------------------------------------------`)
 
 //Cau 7:
-const newCountries2 = countries.map(e => e.length)
-
-console.log(newCountries2)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 8:
-const newNumbers = numbers.map(e => e * e)
-
-console.log(newNumbers)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 9:
-let newNames = names
-
-console.log(names)
-
-newNames = newNames.map(e => e.toUpperCase())
-
-console.log(newNames)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 10:
-const newProducts = products.map(e => console.log(e))
-
-console.log(`-------------------------------------------------------------`)
-
-//Cau 11:
-const landCountries = countries.filter(e => {
-    e = e.toLowerCase()
-    return e.includes('land')
+const letterUsedManyTime = boring(countries).sort((e1, e2) => {
+    if (e2.Count < e1.Count) return -1
+    else return 0
 })
 
-console.log(landCountries)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 12:
-const countries6Character = countries.filter(e => {
-    if (e.length == 6) return e
-})
-
-console.log(countries6Character)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 13:
-const countries6AndMore = countries.filter(e => {
-    if (e.length >= 6) return e
-})
-
-console.log(countries6AndMore)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 14:
-const countriesStartsWithE = countries.filter(e => e.startsWith('E'))
-
-console.log(countriesStartsWithE)
-console.log(`-------------------------------------------------------------`)
-
-//Cau 15:
-const productPriceValue = products.filter((e, index) => {
-    console.log(e.price)
-    return 0
-})
-
-console.log(`------------------------------------------------------------`)
-
-//Cau 16:
-const getStringLists = (arr) => {
-    let newarr = arr.filter(e => typeof e === "string")
-    return newarr
-}
-
-console.log(getStringLists(arr1))
-console.log(`------------------------------------------------------------`)
-
-//Cau 17:
-let sum = numbers.reduce((total, e) => total + e, 0)
-
-console.log(sum)
-console.log(`------------------------------------------------------------`)
-
-//Cau 18:
-const newstring1 = countries.reduce((total, e, index, arr) => {
-    if (total == '') {
-        total += 'Estonia, '
-    }
-    if (index < arr.length - 1) {
-        total += e + ', '
-    }
-    else {
-        total += 'and ' + e + ' are north European countries'
-    }
-    return total
-}, '')
-
-console.log(newstring1)
-console.log(`------------------------------------------------------------`)
-
-//Cau 19:
-//Some:
-let someEx = countries.some(e => e.length == 6)
-
-console.log(someEx) //In ra kết quả là true
-//Every:
-let everyEx = countries.every(e => e.length == 6)
-
-console.log(everyEx) //In ra kết quả là false
-console.log(`------------------------------------------------------------`)
-
-//Kết luận:
-//Some sẽ kiểm tra từng phần tử của mảng và chỉ cần một phần tử của mảng thỏa điều kiện thì sẽ trả về true. Ngược lại trả về false.
-//Every sẽ kiểm tra từng phần tử của mảng. Nếu tất cả phần tử của mảng đều thỏa điều kiện thì sẽ trả về true. Ngược lại trả về false.
-
-//Cau 20:
-const isSomeCountries7More = countries.some(e => e.length > 7)
-
-console.log(isSomeCountries7More)
-console.log(`------------------------------------------------------------`)
-
-//Cau 21:
-const isAllLandCountries = countries.every(e => {
-    e = e.toLowerCase()
-    return e.includes('land')
-})
-
-console.log(isAllLandCountries)
-console.log(`------------------------------------------------------------`)
-
-//Cau 22:
-//Find:
-const findEx = countries.find(e => e.length == 6)
-
-console.log(findEx) //In ra kết quả là 'Sweden'
-
-//FindIndex:
-const findIndexEx = countries.findIndex(e => e.length == 6)
-
-console.log(findIndexEx) //In ra kết quả là 1
-console.log(`------------------------------------------------------------`)
-
-//Kết luận:
-//Find trả về kết quả là phần tử đầu tiên thỏa điều kiện.
-//FindIndex trả về kết quả là chỉ mục của phần tử đầu tiên thỏa điều kiện.
-
-//Cau 23:
-const findFirstCountry6Letters = countries.find(e => e.length == 6)
-
-console.log(findFirstCountry6Letters)
-console.log(`------------------------------------------------------------`)
-
-//Cau 24:
-const findPositionFirstCountry6Letters = countries.findIndex(e => e.length == 6)
-
-console.log(findPositionFirstCountry6Letters)
-console.log(`------------------------------------------------------------`)
-
-//Cau 25:
-const findPositionNorway = countries.findIndex(e => e.includes('Norway'))
-
-console.log(findPositionNorway)
-console.log(`------------------------------------------------------------`)
-
-//Cau 26:
-const findPositionRussia = countries.findIndex(e => e.includes('Russia'))
-
-console.log(findPositionRussia)
+console.log(letterUsedManyTime.find((e) => e))
