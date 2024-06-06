@@ -1,285 +1,210 @@
-//Cau 1:
-interface Account {
-    firstName: string,
-    lastName: string,
-    incomes: {
-        salary: number,
-        bonus: number,
-        overtime: number,
-        other: number
-    },
-    expenses: {
-        living: number,
-        travel: number,
-        rent: number,
-        other: number
-    },
-    totalIncome: () => number,
-    totalExpense: () => number,
-    accountInfo: () => string,
-    addIncome: (incomeNumber: number) => object
-    addExpense: (expenseNumber: number) => object
-    accountBalance: () => number
-}
-
-const personalAccount: Account = {
-    firstName: 'Ha',
-    lastName: 'Cao',
-    incomes: {
-        salary: 860,
-        bonus: 614,
-        overtime: 932,
-        other: 18
-    },
-    expenses: {
-        living: 223,
-        travel: 340,
-        rent: 695,
-        other: 454
-    },
-    totalIncome: function () {
-        return this.incomes.bonus + this.incomes.other + this.incomes.overtime + this.incomes.salary
-    },
-    totalExpense: function () {
-        return this.expenses.living + this.expenses.other + this.expenses.rent + this.expenses.travel
-    },
-    accountInfo: function () {
-        return `I am ${this.firstName} ${this.lastName}.\nIncomes: ${Object.values(this.incomes)}.\nExpenses: ${Object.values(this.expenses)}.\nTotal incomes: ${this.totalIncome()}.\nTotal expenses: ${this.totalExpense()}.\nAccount balance: ${this.accountBalance()}.`
-    },
-    addIncome: function (incomeNumber: number) {
-        this.incomes.other += incomeNumber
-        return this.incomes
-    },
-    addExpense: function (expenseNumber: number) {
-        this.expenses.other += expenseNumber
-        return this.expenses
-    },
-    accountBalance: function () {
-        return this.totalIncome() - this.totalExpense()
-    }
-}
-
-console.log(personalAccount)
-console.log(personalAccount.accountInfo())
-console.log(personalAccount.addIncome(200))
-console.log(personalAccount.addExpense(200))
-console.log(`----------------------------------------------------------------`)
-
 //Array:
-interface user {
-    _id: string,
-    username: string,
-    email: string,
-    password: string,
-    createdAt: string,
-    isLoggedIn: boolean
+const countries: string[] = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand']
+const names: string[] = ['Asabeneh', 'Mathias', 'Elias', 'Brook']
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+interface Product {
+    product: string,
+    price: any
 }
 
-const users: user[] = [
-    {
-        _id: 'ab12ex',
-        username: 'Alex',
-        email: 'alex@alex.com',
-        password: '123123',
-        createdAt: '08/01/2020 9:00 AM',
-        isLoggedIn: false
-    },
-    {
-        _id: 'fg12cy',
-        username: 'Asab',
-        email: 'asab@asab.com',
-        password: '123456',
-        createdAt: '08/01/2020 9:30 AM',
-        isLoggedIn: true
-    },
-    {
-        _id: 'zwf8md',
-        username: 'Brook',
-        email: 'brook@brook.com',
-        password: '123111',
-        createdAt: '08/01/2020 9:45 AM',
-        isLoggedIn: true
-    },
-    {
-        _id: 'eefamr',
-        username: 'Martha',
-        email: 'martha@martha.com',
-        password: '123222',
-        createdAt: '08/01/2020 9:50 AM',
-        isLoggedIn: false
-    },
-    {
-        _id: 'ghderc',
-        username: 'Thomas',
-        email: 'thomas@thomas.com',
-        password: '123333',
-        createdAt: '08/01/2020 10:00 AM',
-        isLoggedIn: false
-    }
-];
-
-interface rating {
-    userId: string,
-    rate: number
-}
-
-interface product {
-    _id: string,
-    name: string,
-    description: string,
-    price: number,
-    ratings: rating[],
-    likes: string[]
-}
-
-const products: product[] = [
-    {
-        _id: 'eedfcf',
-        name: 'mobile phone',
-        description: 'Huawei Honor',
-        price: 200,
-        ratings: [
-            { userId: 'fg12cy', rate: 5 },
-            { userId: 'zwf8md', rate: 4.5 }
-        ],
-        likes: []
-    },
-    {
-        _id: 'aegfal',
-        name: 'Laptop',
-        description: 'MacPro: System Darwin',
-        price: 2500,
-        ratings: [],
-        likes: ['fg12cy']
-    },
-    {
-        _id: 'hedfcg',
-        name: 'TV',
-        description: 'Smart TV:Procaster',
-        price: 400,
-        ratings: [{ userId: 'fg12cy', rate: 5 }],
-        likes: ['fg12cy']
-    }
+const products: Product[] = [
+    { product: 'banana', price: 3 },
+    { product: 'mango', price: 6 },
+    { product: 'potato', price: ' ' },
+    { product: 'avocado', price: 8 },
+    { product: 'coffee', price: 10 },
+    { product: 'tea', price: '' },
 ]
-//Cau 2: //_id, username, email, password, createdAt, isLoggedIn
-//Cau a:
-const signUp = (objUsers: user[], objUser: user): user[] | any => {
-    for (let i in objUsers) {
-        if (objUsers[i]._id == objUser._id || objUsers[i].email == objUser.email) {
-            return console.log(`You have already an account.`)
-        }
-    }
-    objUsers.push(objUser)
-    return objUsers
-}
-// { _id: 'fasfds', username: 'linhtalinhtinh', email: 'linhtalinhtinh@mail.com', password: 'fdasfdsa', createdAt: `06/05/2024 3:30 PM`, isLoggedIn: true }
-
-console.log(signUp(users, { _id: 'fasfds', username: 'linhtalinhtinh', email: 'linhtalinhtinh@mail.com', password: 'fdasfdsa', createdAt: `06/05/2024 3:30 PM`, isLoggedIn: true }))
-
-//Cau b:
-const signIn = (mail: string, pass: string, obj: user[]): string => {
-    for (let i in obj) {
-        if (obj[i].email == mail && obj[i].password == pass && obj[i].isLoggedIn == true) {
-            return `Account was logged.`
-        }
-        else if (obj[i].email == mail && obj[i].password == pass && obj[i].isLoggedIn == false) {
-            return `Account is logging.`
-        }
-    }
-    return `Your email or password is wrong.Please try again.`
-}
-
-console.log(signIn('linhtalinhtinh@mail.com', 'fdasfdsa', users))
-console.log(signIn('alex@alex.com', '123123', users))
-console.log(signIn('linhtalinhinh@mail.com', 'fdasfdsa', users))
-console.log(`---------------------------------------------------------------`)
+const arr1: any[] = ['Finland', 100, 'Mathias', 'IceLand', 11]
 
 //Cau 3:
-//Cau a:
-const rateProduct = (obj: product[], rateObject: rating, productName: string): string | rating[] => {
-    for (let i in obj) {
-        if (obj[i].name == productName) {
-            obj[i].ratings.push(rateObject)
-            return Object.values(obj[i].ratings)
-        }
-    }
-    return `Your product you rating is not exist.`
-}
-const randNum = (): string => {
-    return (Math.random() * 5).toFixed(1)
-}
-const randId = (): string => {
-    let rand: string = 'qwertyuiopasdfghjklzxcvbnm'
-    let id: string = ''
-    for (let i = 0; i < 6; i++) {
-        id += rand.charAt(Math.floor(Math.random() * rand.length - 1))
-    }
-    return id
-}
+const copyCountries: string[] = countries
 
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'Laptop')
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'TV')
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'TV')
-rateProduct(products, { userId: randId(), rate: +randNum() }, 'mobile phone')
-//Cau b:
-const averageRating = (obj: product[]): { '01': string, rate: string }[] => {
-    let rankRate: { '01': string, rate: string }[] = []
-    for (let i in obj) {
-        let rate: any = 0
-        if (obj[i].name == 'TV') {
-            for (let j = 0; j < obj[i].ratings.length; j++) {
-                rate += +obj[i].ratings[j].rate
-            }
-            rate /= +obj[i].ratings.length
-            rate = rate.toFixed(1)
-            rankRate.push({ '01': 'TV', rate })
-        }
-        else if (obj[i].name == 'Laptop') {
-            for (let j = 0; j < obj[i].ratings.length; j++) {
-                rate += +obj[i].ratings[j].rate
-            }
-            rate /= +obj[i].ratings.length
-            rate = rate.toFixed(1)
-            rankRate.push({ '01': 'Laptop', rate })
-        }
-        else if (obj[i].name == 'mobile phone') {
-            for (let j = 0; j < obj[i].ratings.length; j++) {
-                rate += +obj[i].ratings[j].rate
-            }
-            rate /= +obj[i].ratings.length
-            rate = rate.toFixed(1)
-            rankRate.push({ '01': 'mobile phone', rate })
-        }
-    }
-    return rankRate
-}
-
-console.log(averageRating(products))
-console.log(`---------------------------------------------------------------`)
+copyCountries.forEach((e: string) => console.log(e))
+console.log(`-------------------------------------------------------------`)
 
 //Cau 4:
-const likeProduct = (obj: product[], id: string, nameProduct: string): product[] => {
-    for (let i in obj) {
-        if (obj[i].name == nameProduct) {
-            for (let j: number = 0; j < obj[i].likes.length; j++) {
-                if (obj[i].likes[j] == id) {
-                    obj[i].likes.splice(j, 1)
-                    return obj
-                }
-            }
-            obj[i].likes.push(id)
-            return obj
-        }
-    }
-    return obj
+const copyNames: string[] = names
+
+copyNames.forEach((e: string) => console.log(e))
+console.log(`-------------------------------------------------------------`)
+
+//Cau 5:
+const copyNumbers: number[] = numbers
+
+copyNumbers.forEach((e: number) => console.log(e))
+console.log(`-------------------------------------------------------------`)
+
+//Cau 6:
+const newCountries: string[] = countries.map((e: string) => e.toUpperCase())
+
+console.log(newCountries)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 7:
+const newCountries2: number[] = countries.map((e: string) => e.length)
+
+console.log(newCountries2)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 8:
+const newNumbers: number[] = numbers.map((e: number) => e * e)
+
+console.log(newNumbers)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 9:
+let newNames: string[] = names
+
+console.log(names)
+
+newNames = newNames.map((e: string) => e.toUpperCase())
+
+console.log(newNames)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 10:
+const newProducts: any[] = products.map((e: any) => console.log(e))
+
+console.log(`-------------------------------------------------------------`)
+
+//Cau 11:
+const landCountries: string[] = countries.filter((e: string) => {
+    e = e.toLowerCase()
+    return e.includes('land')
+})
+
+console.log(landCountries)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 12:
+const countries6Character: string[] = countries.filter((e: string) => {
+    if (e.length == 6) return e
+})
+
+console.log(countries6Character)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 13:
+const countries6AndMore: string[] = countries.filter((e: string) => {
+    if (e.length >= 6) return e
+})
+
+console.log(countries6AndMore)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 14:
+const countriesStartsWithE: string[] = countries.filter((e: string) => e.startsWith('E'))
+
+console.log(countriesStartsWithE)
+console.log(`-------------------------------------------------------------`)
+
+//Cau 15:
+const productPriceValue: any = products.filter((e: Product) => {
+    console.log(e.price)
+    return 0
+})
+
+console.log(`------------------------------------------------------------`)
+
+//Cau 16:
+const getStringLists = (arr: any[]) => {
+    let newarr: string[] = arr.filter((e: any) => typeof e === "string")
+    return newarr
 }
 
-likeProduct(products, randId(), 'Laptop')
-likeProduct(products, randId(), 'Laptop')
-likeProduct(products, randId(), 'mobile phone')
-likeProduct(products, randId(), 'mobile phone')
-likeProduct(products, randId(), 'mobile phone')
-likeProduct(products, randId(), 'TV')
-console.log(likeProduct(products, randId(), 'TV'))
+console.log(getStringLists(arr1))
+console.log(`------------------------------------------------------------`)
+
+//Cau 17:
+let sum: number = numbers.reduce((total: number, e: number) => total + e, 0)
+
+console.log(sum)
+console.log(`------------------------------------------------------------`)
+
+//Cau 18:
+const newstring1: string = countries.reduce((total: string, e: string, index: number, arr: string[]) => {
+    if (total == '') {
+        total += 'Estonia, '
+    }
+    if (index < arr.length - 1) {
+        total += e + ', '
+    }
+    else {
+        total += 'and ' + e + ' are north European countries'
+    }
+    return total
+}, '')
+
+console.log(newstring1)
+console.log(`------------------------------------------------------------`)
+
+//Cau 19:
+//Some:
+let someEx: boolean = countries.some((e: string) => e.length == 6)
+
+console.log(someEx) //In ra kết quả là true
+//Every:
+let everyEx: boolean = countries.every((e: string) => e.length == 6)
+
+console.log(everyEx) //In ra kết quả là false
+console.log(`------------------------------------------------------------`)
+
+//Kết luận:
+//Some sẽ kiểm tra từng phần tử của mảng và chỉ cần một phần tử của mảng thỏa điều kiện thì sẽ trả về true. Ngược lại trả về false.
+//Every sẽ kiểm tra từng phần tử của mảng. Nếu tất cả phần tử của mảng đều thỏa điều kiện thì sẽ trả về true. Ngược lại trả về false.
+
+//Cau 20:
+const isSomeCountries7More: boolean = countries.some((e: string) => e.length > 7)
+
+console.log(isSomeCountries7More)
+console.log(`------------------------------------------------------------`)
+
+//Cau 21:
+const isAllLandCountries: boolean = countries.every((e: string) => {
+    e = e.toLowerCase()
+    return e.includes('land')
+})
+
+console.log(isAllLandCountries)
+console.log(`------------------------------------------------------------`)
+
+//Cau 22:
+//Find:
+const findEx: string | undefined = countries.find((e: string) => e.length == 6)
+
+console.log(findEx) //In ra kết quả là 'Sweden'
+
+//FindIndex:
+const findIndexEx: number = countries.findIndex((e: string) => e.length == 6)
+
+console.log(findIndexEx) //In ra kết quả là 1
+console.log(`------------------------------------------------------------`)
+
+//Kết luận:
+//Find trả về kết quả là phần tử đầu tiên thỏa điều kiện.
+//FindIndex trả về kết quả là chỉ mục của phần tử đầu tiên thỏa điều kiện.
+
+//Cau 23:
+const findFirstCountry6Letters: string | undefined = countries.find((e: string) => e.length == 6)
+
+console.log(findFirstCountry6Letters)
+console.log(`------------------------------------------------------------`)
+
+//Cau 24:
+const findPositionFirstCountry6Letters: number = countries.findIndex((e: string) => e.length == 6)
+
+console.log(findPositionFirstCountry6Letters)
+console.log(`------------------------------------------------------------`)
+
+//Cau 25:
+const findPositionNorway: number = countries.findIndex((e: string) => e.includes('Norway'))
+
+console.log(findPositionNorway)
+console.log(`------------------------------------------------------------`)
+
+//Cau 26:
+const findPositionRussia: number = countries.findIndex((e: string) => e.includes('Russia'))
+
+console.log(findPositionRussia)
