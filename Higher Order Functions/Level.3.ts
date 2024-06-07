@@ -1,5 +1,15 @@
 // //Array
-// const countries_data = [
+// interface Country {
+//     name: string,
+//     capital: string,
+//     languages: string[],
+//     population: number,
+//     flag: string,
+//     region: string,
+//     area: number
+// }
+
+// const countries_data: Country[] = [
 //     {
 //         "name": "Afghanistan",
 //         "capital": "Kabul",
@@ -93,6 +103,7 @@
 //     },
 //     {
 //         "name": "Antarctica",
+//         "capital": "",
 //         "languages": [
 //             "English",
 //             "Russian"
@@ -346,6 +357,7 @@
 //     },
 //     {
 //         "name": "Bouvet Island",
+//         "capital": "",
 //         "languages": [
 //             "Norwegian",
 //             "Norwegian Bokmål",
@@ -380,12 +392,14 @@
 //     },
 //     {
 //         "name": "United States Minor Outlying Islands",
+//         "capital": "",
 //         "languages": [
 //             "English"
 //         ],
 //         "population": 300,
 //         "flag": "https://flagcdn.com/um.svg",
-//         "region": "Americas"
+//         "region": "Americas",
+//         "area": 0
 //     },
 //     {
 //         "name": "Virgin Islands (British)",
@@ -913,7 +927,8 @@
 //         ],
 //         "population": 254541,
 //         "flag": "https://flagcdn.com/gf.svg",
-//         "region": "Americas"
+//         "region": "Americas",
+//         "area": 0
 //     },
 //     {
 //         "name": "French Polynesia",
@@ -1044,7 +1059,8 @@
 //         ],
 //         "population": 400132,
 //         "flag": "https://flagcdn.com/gp.svg",
-//         "region": "Americas"
+//         "region": "Americas",
+//         "area": 0
 //     },
 //     {
 //         "name": "Guam",
@@ -1130,6 +1146,7 @@
 //     },
 //     {
 //         "name": "Heard Island and McDonald Islands",
+//         "capital": "",
 //         "languages": [
 //             "English"
 //         ],
@@ -1509,6 +1526,7 @@
 //     },
 //     {
 //         "name": "Macao",
+//         "capital": "",
 //         "languages": [
 //             "Chinese",
 //             "Portuguese"
@@ -1618,7 +1636,8 @@
 //         ],
 //         "population": 378243,
 //         "flag": "https://flagcdn.com/mq.svg",
-//         "region": "Americas"
+//         "region": "Americas",
+//         "area": 0
 //     },
 //     {
 //         "name": "Mauritania",
@@ -1650,7 +1669,8 @@
 //         ],
 //         "population": 226915,
 //         "flag": "https://flagcdn.com/yt.svg",
-//         "region": "Africa"
+//         "region": "Africa",
+//         "area": 0
 //     },
 //     {
 //         "name": "Mexico",
@@ -1967,7 +1987,8 @@
 //         ],
 //         "population": 4803269,
 //         "flag": "https://flagcdn.com/ps.svg",
-//         "region": "Asia"
+//         "region": "Asia",
+//         "area": 0
 //     },
 //     {
 //         "name": "Panama",
@@ -2101,7 +2122,8 @@
 //         ],
 //         "population": 840974,
 //         "flag": "https://flagcdn.com/re.svg",
-//         "region": "Africa"
+//         "region": "Africa",
+//         "area": 0
 //     },
 //     {
 //         "name": "Romania",
@@ -2157,7 +2179,8 @@
 //         ],
 //         "population": 4255,
 //         "flag": "https://flagcdn.com/sh.svg",
-//         "region": "Africa"
+//         "region": "Africa",
+//         "area": 0
 //     },
 //     {
 //         "name": "Saint Kitts and Nevis",
@@ -2405,7 +2428,8 @@
 //         ],
 //         "population": 30,
 //         "flag": "https://flagcdn.com/gs.svg",
-//         "region": "Americas"
+//         "region": "Americas",
+//         "area": 0
 //     },
 //     {
 //         "name": "Korea (Republic of)",
@@ -2483,7 +2507,8 @@
 //         ],
 //         "population": 2562,
 //         "flag": "https://flagcdn.com/sj.svg",
-//         "region": "Europe"
+//         "region": "Europe",
+//         "area": 0
 //     },
 //     {
 //         "name": "Swaziland",
@@ -2865,22 +2890,22 @@
 // ]
 
 // //Cau 1:
-// const countriesSortName = (countries_data) => {
-//     let newCountries = countries_data.sort((e1, e2) => {
+// const countriesSortName = (countries_data: Country[]): Country[] => {
+//     let newCountries: Country[] = countries_data.sort((e1: Country, e2: Country) => {
 //         if (e1.name < e2.name) return -1
 //         else return 0
 //     })
 //     return newCountries
 // }
-// const countriesSortCapital = (countries_data) => {
-//     let newCountries = countries_data.sort((e1, e2) => {
+// const countriesSortCapital = (countries_data: Country[]): Country[] => {
+//     let newCountries: Country[] = countries_data.sort((e1: Country, e2: Country) => {
 //         if (e1.capital < e2.capital) return -1
 //         else return 0
 //     })
 //     return newCountries
 // }
-// const countriesSortPopulation = (countries_data) => {
-//     let newCountries = countries_data.sort((e1, e2) => {
+// const countriesSortPopulation = (countries_data: Country[]): Country[] => {
+//     let newCountries: Country[] = countries_data.sort((e1: Country, e2: Country) => {
 //         if (e1.population < e2.population) return -1
 //         else return 0
 //     })
@@ -2894,45 +2919,45 @@
 // console.log('-----------------------------------------------------------')
 
 // //Cau 2:
-// const languagesArray = (countries) => {
-//     let newLanguages = []
-//     for (let i = 0; i < countries.length; i++) {
-//         for (let j = 0; j < countries[i].languages.length; j++) {
+// const languagesArray = (countries: Country[]): string[] => {
+//     let newLanguages: string[] = []
+//     for (let i: number = 0; i < countries.length; i++) {
+//         for (let j: number = 0; j < countries[i].languages.length; j++) {
 //             newLanguages.push(countries[i].languages[j])
 //         }
 //     }
 //     return newLanguages
 // }
-// const uniqueLanguage = (languages) => {
-//     let newUniqueLanguage = []
-//     for (let i = 0; i < languages.length; i++) {
-//         let count = 0
-//         for (let j = i + 1; j < languages.length; j++) {
+// const uniqueLanguage = (languages: string[]): string[] => {
+//     let newUniqueLanguage: string[] = []
+//     for (let i: number = 0; i < languages.length; i++) {
+//         let count: number = 0
+//         for (let j: number = i + 1; j < languages.length; j++) {
 //             if (languages[i] == languages[j]) count++
 //         }
 //         if (count == 0) newUniqueLanguage.push(languages[i])
 //     }
 //     return newUniqueLanguage
 // }
-// const languages = uniqueLanguage(languagesArray(countries_data))
-// const spokeLanguages = (languagesArray, languages) => {
-//     let newSpokeLanguages = languages.map((e) => {
-//         let count = 0
-//         for (let i = 0; i < languagesArray.length; i++) {
+// const languages: string[] = uniqueLanguage(languagesArray(countries_data))
+// const spokeLanguages = (languagesArray: string[], languages: string[]): { country: string, count: number }[] => {
+//     let newSpokeLanguages: { country: string, count: number }[] = languages.map((e) => {
+//         let count: number = 0
+//         for (let i: number = 0; i < languagesArray.length; i++) {
 //             if (e == languagesArray[i]) count++
 //         }
 //         return { country: e, count: count }
 //     })
 //     return newSpokeLanguages
 // }
-// const countriesLanguages = spokeLanguages(languagesArray(countries_data), languages)
-// countriesLanguages.sort((e1, e2) => {
+// const countriesLanguages: { country: string, count: number }[] = spokeLanguages(languagesArray(countries_data), languages)
+// countriesLanguages.sort((e1: { country: string, count: number }, e2: { country: string, count: number }) => {
 //     if (e1.count > e2.count) return -1
 //     else return 0
 // })
-// const mostSpokenLanguages = (countries, num) => {
-//     let temp = []
-//     for (let i = 0; i < num; i++) {
+// const mostSpokenLanguages = (countries: { country: string, count: number }[], num: number): { country: string, count: number }[] => {
+//     let temp: { country: string, count: number }[] = []
+//     for (let i: number = 0; i < num; i++) {
 //         temp.push(countries[i])
 //     }
 //     return temp
@@ -2943,19 +2968,19 @@
 // console.log('-----------------------------------------------------------')
 
 // //Cau 3:
-// const countriesPopulation = (countries) => {
-//     let temp = countries.map((e) => {
+// const countriesPopulation = (countries: Country[]): { country: string, population: number }[] => {
+//     let temp: { country: string, population: number }[] = countries.map((e) => {
 //         return { country: e.name, population: e.population }
 //     })
 //     return temp
 // }
-// const mostPopulationCountriesArray = countriesPopulation(countries_data).sort((e1, e2) => {
+// const mostPopulationCountriesArray: { country: string, population: number }[] = countriesPopulation(countries_data).sort((e1: { country: string, population: number }, e2: { country: string, population: number }) => {
 //     if (e1.population > e2.population) return -1
 //     else return 0
 // })
-// const mostPopulationCountries = (countries, num) => {
-//     let temp = []
-//     for (let i = 0; i < num; i++) {
+// const mostPopulationCountries = (countries: { country: string, population: number }[], num: number): { country: string, population: number }[] => {
+//     let temp: { country: string, population: number }[] = []
+//     for (let i: number = 0; i < num; i++) {
 //         temp.push(countries[i])
 //     }
 //     return temp
@@ -2965,122 +2990,136 @@
 // console.log(mostPopulationCountries(mostPopulationCountriesArray, 3))
 // console.log('-----------------------------------------------------------')
 
-//Cau 4:
-const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
-const count = (arr) => arr.length
-const sum = (arr) => {
-    let sum = arr.reduce((total, e) => total + e, 0)
-    return sum
-}
-const min = (arr) => {
-    let min = arr[0]
-    for (let i = 1; i < arr.length; i++) {
-        if (min > arr[i]) min = arr[i]
-    }
-    return min
-}
-const max = (arr) => {
-    let max = arr[0]
-    for (let i = 1; i < arr.length; i++) {
-        if (max < arr[i]) max = arr[i]
-    }
-    return max
-}
-const range = (arr) => max(arr) - min(arr)
-const mean = (arr) => Math.round(sum(arr) / count(arr))
-const median = (arr) => {
-    let newArr = arr
-    for (let i = 0; i < newArr.length; i++) {
-        for (let j = i + 1; j < newArr.length; j++) {
-            let temp = 0
-            if (newArr[i] > newArr[j]) {
-                temp = newArr[i]
-                newArr[i] = newArr[j]
-                newArr[j] = temp
-            }
-        }
-    }
-    if (newArr.length % 2 == 0) return (newArr[(newArr.length / 2) - 1] + newArr[newArr.length / 2]) / 2
-    else return newArr[Math.floor(newArr.length / 2)]
-}
-const uniqueE = (arr) => {
-    let newUniqueE = []
-    for (let i = 0; i < arr.length; i++) {
-        let count = 0
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] == arr[j]) count++
-        }
-        if (count == 0) newUniqueE.push(arr[i])
-    }
-    return newUniqueE
-}
-const countArray = (arr, unique) => {
-    let newArr = unique.map((e) => {
-        let count = 0
-        for (let i = 0; i < arr.length; i++) {
-            if (e == arr[i]) count++
-        }
-        return { 'mode': e, 'count': count }
-    })
-    return newArr
-}
-const mode = (arr) => {
-    let newArr = arr.sort((e1, e2) => {
-        if (e1.count > e2.count) return -1
-        else return 0
-    })
-    return newArr[0]
-}
-const variance = () => {
-    let newAges = []
-    for (let i = 0; i < ages.length; i++) {
-        newAges.push(ages[i] - mean(ages))
-    }
-    for (let i = 0; i < newAges.length; i++) {
-        newAges[i] *= newAges[i]
-    }
-    let newSum = sum(newAges)
-    return newSum / newAges.length
-}
-const standardDeviation = () => Math.sqrt(variance()).toFixed(1)
-const frequencyDistribution = () => {
-    let newCountArray = countArray(ages, uniqueE(ages)).sort((e1, e2) => {
-        if (e1.count > e2.count) return -1
-        else return 0
-    })
-    let newArr = []
-    for (let i = 0; i < newCountArray.length; i++) {
-        let temp = '('
-        temp += (newCountArray[i].count / ages.length * 100).toFixed(1) + ', '
-        temp += newCountArray[i].mode + ')'
-        newArr.push(temp)
-    }
-    return newArr
-}
-const statistics = {
-    'count': count(ages),
-    'sum': sum(ages),
-    'min': min(ages),
-    'max': max(ages),
-    'range': range(ages),
-    'mean': mean(ages),
-    'median': median(ages),
-    'mode': mode(countArray(ages, uniqueE(ages))),
-    'var': variance(),
-    'std': standardDeviation(),
-    'freqDist': frequencyDistribution(),
-    'describe': function () {
-        return `\t\tCount: ${this.count}
-        Sum: ${this.sum}
-        Min: ${this.min}
-        Max: ${this.max}
-        Range: ${this.range}
-        Mean: ${this.mean}
-        Median: ${this.median}
-        Mode: ${this.mode}
-        Variance: ${this.var}
-        Standard Deviation: ${this.std}
-        Frequency Distribution: ${this.freqDist}`
-    }
-}
-console.log(statistics.describe())
+// //Cau 4:
+// const ages: number[] = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
+// const count = (arr: number[]): number => arr.length
+// const sum = (arr: number[]): number => {
+//     let sum = arr.reduce((total, e) => total + e, 0)
+//     return sum
+// }
+// const min = (arr: number[]): number => {
+//     let min: number = arr[0]
+//     for (let i: number = 1; i < arr.length; i++) {
+//         if (min > arr[i]) min = arr[i]
+//     }
+//     return min
+// }
+// const max = (arr: number[]): number => {
+//     let max: number = arr[0]
+//     for (let i: number = 1; i < arr.length; i++) {
+//         if (max < arr[i]) max = arr[i]
+//     }
+//     return max
+// }
+// const range = (arr: number[]): number => max(arr) - min(arr)
+// const mean = (arr: number[]): number => Math.round(sum(arr) / count(arr))
+// const median = (arr: number[]): number => {
+//     let newArr: number[] = arr
+//     for (let i: number = 0; i < newArr.length; i++) {
+//         for (let j: number = i + 1; j < newArr.length; j++) {
+//             let temp: number = 0
+//             if (newArr[i] > newArr[j]) {
+//                 temp = newArr[i]
+//                 newArr[i] = newArr[j]
+//                 newArr[j] = temp
+//             }
+//         }
+//     }
+//     if (newArr.length % 2 == 0) return (newArr[(newArr.length / 2) - 1] + newArr[newArr.length / 2]) / 2
+//     else return newArr[Math.floor(newArr.length / 2)]
+// }
+// const uniqueE = (arr: number[]): number[] => {
+//     let newUniqueE: number[] = []
+//     for (let i: number = 0; i < arr.length; i++) {
+//         let count: number = 0
+//         for (let j: number = i + 1; j < arr.length; j++) {
+//             if (arr[i] == arr[j]) count++
+//         }
+//         if (count == 0) newUniqueE.push(arr[i])
+//     }
+//     return newUniqueE
+// }
+// const countArray = (arr: number[], unique: number[]): { mode: number, count: number }[] => {
+//     let newArr: { mode: number, count: number }[] = unique.map((e) => {
+//         let count: number = 0
+//         for (let i: number = 0; i < arr.length; i++) {
+//             if (e == arr[i]) count++
+//         }
+//         return { 'mode': e, 'count': count }
+//     })
+//     return newArr
+// }
+// const mode = (arr: { mode: number, count: number }[]) => {
+//     let newArr: { mode: number, count: number }[] = arr.sort((e1: { mode: number, count: number }, e2: { mode: number, count: number }) => {
+//         if (e1.count > e2.count) return -1
+//         else return 0
+//     })
+//     return newArr[0]
+// }
+// const variance = (): number => {
+//     let newAges: number[] = []
+//     for (let i: number = 0; i < ages.length; i++) {
+//         newAges.push(ages[i] - mean(ages))
+//     }
+//     for (let i: number = 0; i < newAges.length; i++) {
+//         newAges[i] *= newAges[i]
+//     }
+//     let newSum: number = sum(newAges)
+//     return newSum / newAges.length
+// }
+// const standardDeviation = (): any => Math.sqrt(variance()).toFixed(1)
+// const frequencyDistribution = () => {
+//     let newCountArray: { mode: number, count: number }[] = countArray(ages, uniqueE(ages)).sort((e1: { mode: number, count: number }, e2: { mode: number, count: number }) => {
+//         if (e1.count > e2.count) return -1
+//         else return 0
+//     })
+//     let newArr: string[] = []
+//     for (let i: number = 0; i < newCountArray.length; i++) {
+//         let temp: string = '('
+//         temp += (newCountArray[i].count / ages.length * 100).toFixed(1) + ', '
+//         temp += newCountArray[i].mode + ')'
+//         newArr.push(temp)
+//     }
+//     return newArr
+// }
+// interface Statistic {
+//     count: number,
+//     sum: number,
+//     min: number,
+//     max: number,
+//     range: number,
+//     mean: number,
+//     median: number,
+//     mode: { mode: number, count: number },
+//     var: number,
+//     std: number,
+//     freqDist: string[],
+//     describe: Function
+// }
+// const statistics: Statistic = {
+//     'count': count(ages),
+//     'sum': sum(ages),
+//     'min': min(ages),
+//     'max': max(ages),
+//     'range': range(ages),
+//     'mean': mean(ages),
+//     'median': median(ages),
+//     'mode': mode(countArray(ages, uniqueE(ages))),
+//     'var': variance(),
+//     'std': standardDeviation(),
+//     'freqDist': frequencyDistribution(),
+//     'describe': function () {
+//         return `\t\tCount: ${this.count}
+//         Sum: ${this.sum}
+//         Min: ${this.min}
+//         Max: ${this.max}
+//         Range: ${this.range}
+//         Mean: ${this.mean}
+//         Median: ${this.median}
+//         Mode: ${this.mode}
+//         Variance: ${this.var}
+//         Standard Deviation: ${this.std}
+//         Frequency Distribution: ${this.freqDist}`
+//     }
+// }
+// console.log(statistics.describe())
