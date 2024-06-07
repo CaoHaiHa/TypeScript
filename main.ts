@@ -1,42 +1,28 @@
-//Cau 1:
-const emptySet: Set<unknown> = new Set();
+//Array and Sets
+const a: number[] = [4, 5, 8, 9]
+const b: number[] = [3, 4, 5, 7]
+const setA: Set<number> = new Set(a)
+const setB: Set<number> = new Set(b)
 
-console.log(emptySet);
-console.log(`---------------------------------------------------------------`);
+//Cau 1:
+const c: number[] = [...a, ...b]
+const setC: Set<number> = new Set(c)
+
+console.log(setC)
+console.log(`-------------------------------------------------------------`)
 
 //Cau 2:
-const numberSet: Set<number> = new Set();
+const d: number[] = a.filter((e: number) => setB.has(e))
+const setD: Set<number> = new Set(d)
 
-for (let i: number = 0; i <= 10; i++) numberSet.add(i);
-
-console.log(numberSet);
-console.log(`---------------------------------------------------------------`);
+console.log(setD)
+console.log(`-------------------------------------------------------------`)
 
 //Cau 3:
-numberSet.delete(5);
-numberSet.delete(7);
-numberSet.delete(9);
+const e: number[] = a.filter((e: number) => !setB.has(e))
+const setE: Set<number> = new Set(e)
+const f: number[] = b.filter((e: number) => !setA.has(e))
+const setF: Set<number> = new Set(f)
 
-console.log(numberSet);
-console.log(`---------------------------------------------------------------`);
-
-//Cau 4:
-numberSet.clear();
-
-console.log(numberSet);
-console.log(`---------------------------------------------------------------`);
-
-//Cau 5:
-const randomString: string[] = ['Daerxg', 'XpoDZH', 'qklNWB', 'GfKFwX', 'KWFkRR'];
-const setOfString: Set<string> = new Set(randomString);
-
-console.log(setOfString);
-console.log(`---------------------------------------------------------------`);
-
-//Cau 6:
-const countries: string[] = ['Finland', 'Sweden', 'Norway'];
-
-const mapCountries: Map<string, number> = new Map();
-for (let country of countries) mapCountries.set(country, country.length);
-
-console.log(mapCountries);
+console.log(setE)
+console.log(setF)
