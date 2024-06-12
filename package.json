@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "requirejs": "^2.3.6"
   }
 }
